@@ -13,6 +13,7 @@
 		110F4DC8290366D100433460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110F4DC6290366D100433460 /* Main.storyboard */; };
 		110F4DCA290366D300433460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 110F4DC9290366D300433460 /* Assets.xcassets */; };
 		110F4DCD290366D300433460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110F4DCB290366D300433460 /* LaunchScreen.storyboard */; };
+		11D72A0C29058BC9006B3ED1 /* AddQuestioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D72A0B29058BC9006B3ED1 /* AddQuestioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		110F4DC9290366D300433460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		110F4DCC290366D300433460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		110F4DCE290366D300433460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11D72A0B29058BC9006B3ED1 /* AddQuestioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddQuestioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 		110F4DB4290366D000433460 = {
 			isa = PBXGroup;
 			children = (
+				11D72A0B29058BC9006B3ED1 /* AddQuestioViewController.swift */,
 				110F4DBF290366D100433460 /* MarubatsuApp */,
 				110F4DBE290366D100433460 /* Products */,
 			);
@@ -141,6 +144,7 @@
 				110F4DC5290366D100433460 /* ViewController.swift in Sources */,
 				110F4DC1290366D100433460 /* AppDelegate.swift in Sources */,
 				110F4DC3290366D100433460 /* SceneDelegate.swift in Sources */,
+				11D72A0C29058BC9006B3ED1 /* AddQuestioViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

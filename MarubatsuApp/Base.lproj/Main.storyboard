@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MarubatsuApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -45,7 +45,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfk-vN-edN">
-                                <rect key="frame" x="20" y="55" width="350" height="100"/>
+                                <rect key="frame" x="20" y="87" width="350" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="7J8-wZ-Vhe"/>
                                 </constraints>
@@ -53,30 +53,86 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pj-xf-IZS">
+                                <rect key="frame" x="20" y="47" width="350" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="問題を作成する"/>
+                                <connections>
+                                    <segue destination="rft-BM-LzR" kind="show" id="3Tq-vn-Fnk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="kfk-vN-edN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3DQ-oM-O9z"/>
+                            <constraint firstItem="1pj-xf-IZS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3uU-cK-xoV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mjf-Ls-G2E" secondAttribute="trailing" constant="20" id="4es-Jx-Ftu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kfk-vN-edN" secondAttribute="trailing" constant="20" id="830-1m-8OK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kfk-vN-edN" secondAttribute="trailing" constant="20" id="8S7-cy-rSM"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="mjf-Ls-G2E" secondAttribute="bottom" constant="20" id="8dI-EQ-CqZ"/>
                             <constraint firstItem="2FC-6z-CEI" firstAttribute="height" secondItem="mjf-Ls-G2E" secondAttribute="height" id="9Ji-OK-7SW"/>
+                            <constraint firstItem="1pj-xf-IZS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BiW-xv-gVj"/>
+                            <constraint firstItem="kfk-vN-edN" firstAttribute="top" secondItem="1pj-xf-IZS" secondAttribute="bottom" id="VIy-ev-P4W"/>
+                            <constraint firstItem="kfk-vN-edN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YIn-bI-Vvo"/>
+                            <constraint firstItem="kfk-vN-edN" firstAttribute="top" secondItem="1pj-xf-IZS" secondAttribute="bottom" id="abD-vs-VZr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1pj-xf-IZS" secondAttribute="trailing" constant="20" id="cCc-gl-wAG"/>
+                            <constraint firstItem="1pj-xf-IZS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cQf-nT-dhf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2FC-6z-CEI" secondAttribute="bottom" constant="20" id="eme-Mp-CTE"/>
+                            <constraint firstItem="1pj-xf-IZS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="fap-Hq-vej"/>
                             <constraint firstItem="2FC-6z-CEI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="h8R-zh-N5i"/>
                             <constraint firstItem="mjf-Ls-G2E" firstAttribute="leading" secondItem="2FC-6z-CEI" secondAttribute="trailing" constant="8" id="iKU-NI-ZGh"/>
                             <constraint firstItem="2FC-6z-CEI" firstAttribute="width" secondItem="mjf-Ls-G2E" secondAttribute="width" id="ib4-aA-9bs"/>
                             <constraint firstItem="mjf-Ls-G2E" firstAttribute="leading" secondItem="2FC-6z-CEI" secondAttribute="trailing" constant="8" id="ifn-JL-NMu"/>
+                            <constraint firstItem="1pj-xf-IZS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k2U-Ch-OWZ"/>
                             <constraint firstItem="kfk-vN-edN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mxl-G1-qBq"/>
-                            <constraint firstItem="kfk-vN-edN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="tOg-ao-lHk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1pj-xf-IZS" secondAttribute="trailing" constant="20" id="qWH-g0-g9B"/>
+                            <constraint firstItem="kfk-vN-edN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="tOg-ao-lHk"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="Eyk-hT-ALQ"/>
+                    <navigationItem key="navigationItem" id="nvQ-AQ-Q5Q"/>
                     <connections>
                         <outlet property="questionLabel" destination="kfk-vN-edN" id="DYB-M8-VzF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="101.53846153846153" y="3.5545023696682461"/>
+            <point key="canvasLocation" x="1932.3076923076922" y="-310.66350710900474"/>
+        </scene>
+        <!--Add Questio View Controller-->
+        <scene sceneID="paG-to-Txp">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="rft-BM-LzR" customClass="AddQuestioViewController" customModule="MarubatsuApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tWT-hA-jyj">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6sW-yS-Uk4">
+                                <rect key="frame" x="20" y="47" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="goS-4X-ODl"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="戻る"/>
+                                <connections>
+                                    <action selector="backBtnAction:" destination="rft-BM-LzR" eventType="touchUpInside" id="Cf6-PZ-Nnd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HEK-Jc-kUr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6sW-yS-Uk4" firstAttribute="leading" secondItem="HEK-Jc-kUr" secondAttribute="leading" constant="20" id="3Ib-Oc-chZ"/>
+                            <constraint firstItem="HEK-Jc-kUr" firstAttribute="trailing" secondItem="6sW-yS-Uk4" secondAttribute="trailing" constant="20" id="MMm-Rw-x7v"/>
+                            <constraint firstItem="6sW-yS-Uk4" firstAttribute="top" secondItem="HEK-Jc-kUr" secondAttribute="top" id="WxW-nU-lkQ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qwT-5a-rPV"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ro-yg-dEZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2909" y="-311"/>
         </scene>
     </scenes>
     <resources>
