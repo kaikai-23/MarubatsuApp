@@ -81,11 +81,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        showQuestion()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         let userDefaults = UserDefaults.standard
         var newquestion = userDefaults.object(forKey: "addqustion") as? String
         var newselection = userDefaults.object(forKey: "addselection") as? Bool
         questions.append(["question": newquestion,"answer": newselection])
-        showQuestion()
     }
 
     @IBAction func tappedNoButton(_ sender: UIButton) {
