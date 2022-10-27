@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     var currentQuestionNum:Int = 0
     
     // 問題
-       let questions: [[String: Any]] = [
+       var questions: [[String: Any]] = [
            [
                "question": "Mr.Childrenのデビュー曲は「innocent world」である",
                "answer": false
@@ -29,6 +29,8 @@ class ViewController: UIViewController {
                "answer": true
            ]
        ]
+    
+    
     // 問題を表示する関数
       func showQuestion() {
           let question = questions[currentQuestionNum]
@@ -79,6 +81,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let userDefaults = UserDefaults.standard
+        var newquestion = userDefaults.object(forKey: "addqustion") as? String
+        var newselection = userDefaults.object(forKey: "addselection") as? Bool
+        questions.append(["question": newquestion,"answer": newselection])
         showQuestion()
     }
 
@@ -90,4 +96,3 @@ class ViewController: UIViewController {
         checkAnswer(yourAnswer: true)
     }
 }
-
