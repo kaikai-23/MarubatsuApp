@@ -16,24 +16,10 @@ class ViewController: UIViewController {
     // 表示中の問題番号を格納
     var currentQuestionNum:Int = 0
     
-    // 問題
-//       var questions: [[String: Any]] = [
-//           [
-//               "question": "Mr.Childrenのデビュー曲は「innocent world」である",
-//               "answer": false
-//           ],
-//           [
-//               "question": "桜井和寿さんは、身長は172cm,血液型O型,好きなスポーツはサッカーである",
-//               "answer": true
-//           ],
-//           [
-//               "question": "Mr.Childrenは2022年をもってデビュー30周年を迎えた",
-//               "answer": true
-//           ]
-//       ]
+
     var questions: [[String: Any]] = []
     
-    
+   
     // 問題を表示する関数
       func showQuestion() {
 
@@ -88,20 +74,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //showQuestion()
-        
         questionLabel.text = "問題がありません。問題を作りましょう"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         let userDefaults = UserDefaults.standard
-        //ここから
-        //        let questions:[[String:Any]] = userDefaults.array(forKey: "NewQuestion") as! [[String:Any]]
-        //ここまで
-        
-//        newquestion = userDefaults.object(forKey: "addqustion") as? String
-//        newselection = userDefaults.object(forKey: "addselection") as? Bool
-//        questions.append(["question": newquestion, "answer": newselection])
-        showQuestion()
+        if userDefaults.array(forKey: "NewQuestion") != nil {
+            questions = userDefaults.array(forKey: "NewQuestion") as! [[String:Any]]
+            showQuestion()
+        }else{
+            questionLabel.text = "問題がありません。問題を作りましょう"
+        }
+
     }
 
     @IBAction func tappedNoButton(_ sender: UIButton) {
@@ -112,7 +96,4 @@ class ViewController: UIViewController {
         checkAnswer(yourAnswer: true)
     }
     
-
 }
-
-

@@ -9,7 +9,7 @@ import UIKit
 
 class AddQuestioViewController: UIViewController {
     
-    var questions2 : [[String:Any]] = []
+    var questions : [[String:Any]] = []
     var judgementsegmentedControl = false
     let userDefaults = UserDefaults.standard
 //    var questions:[[String: Any]]
@@ -35,41 +35,24 @@ class AddQuestioViewController: UIViewController {
         default :print("エラー")
         }
     
-        
+       
     }
     
     @IBOutlet weak var questionTextField: UITextField!
     
     @IBAction func saveBtn(_ sender: Any) {
-        if let textFieldString = questionTextField.text{
-            questions2.append(["question": judgementsegmentedControl, "answer": textFieldString])
+        if let textFieldString =
+            questionTextField.text {
+            questions.append(["question": textFieldString, "answer": judgementsegmentedControl])
+            print(questions)
             let userDefaults = UserDefaults.standard
-            userDefaults.set(questions2, forKey: "NewQuestion")
+            userDefaults.set(questions, forKey: "NewQuestion")
             showAlert(message: "問題文が追加されました")
             questionTextField.text = ""
-        }
-        
-        
-//        if textFieldString != ""{
-//
-//            questions2.append(["question": judgementsegmentedControl, "answer": textFieldString])
-//            let userDefaults = UserDefaults.standard
-//            userDefaults.set(questions2, forKey: "NewQuestion")
-//            showAlert(message: "問題文が追加されました")
-//            questionTextField.text = ""
-        else{
+        }else{
             showAlert(message: "問題文が入力されてません")
         }
-//        if textFieldString != ""{
-//
-//            userDefaults.set(textFieldString,forKey: "addqustion")
-//            userDefaults.set(judgementsegmentedControl,forKey: "addselection")
-//            print(textFieldString)
-//            print(judgementsegmentedControl)
-//            questionTextField.text = ""
-//        }else{
-//            showAlert(message: "問題文が入力されてません")
-        }
+    }
 
 
 
@@ -98,4 +81,4 @@ class AddQuestioViewController: UIViewController {
   }
     
 
-    }
+}
