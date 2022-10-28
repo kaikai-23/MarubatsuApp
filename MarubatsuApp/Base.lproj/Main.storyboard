@@ -147,6 +147,16 @@
                                     <action selector="saveBtn:" destination="rft-BM-LzR" eventType="touchUpInside" id="TaT-6T-qMH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPD-md-O4m">
+                                <rect key="frame" x="114" y="749" width="163" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="問題をすべて削除"/>
+                                <connections>
+                                    <action selector="deleteBtn:" destination="rft-BM-LzR" eventType="touchUpInside" id="duE-bI-hhd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="HEK-Jc-kUr"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

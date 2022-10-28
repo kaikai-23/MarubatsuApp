@@ -8,9 +8,11 @@
 import UIKit
 
 class AddQuestioViewController: UIViewController {
-
-    var textFieldString:String?
+    
+    var questions2 : [[String:Any]] = []
     var judgementsegmentedControl = false
+    let userDefaults = UserDefaults.standard
+//    var questions:[[String: Any]]
     
     
     override func viewDidLoad() {
@@ -39,15 +41,37 @@ class AddQuestioViewController: UIViewController {
     @IBOutlet weak var questionTextField: UITextField!
     
     @IBAction func saveBtn(_ sender: Any) {
-        textFieldString = questionTextField.text
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(textFieldString,forKey: "addqustion")
-        userDefaults.set(judgementsegmentedControl,forKey: "addselection")
-        questionTextField.text = ""
-        
-
-
+        if let textFieldString = questionTextField.text{
+            questions2.append(["question": judgementsegmentedControl, "answer": textFieldString])
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(questions2, forKey: "NewQuestion")
+            showAlert(message: "問題文が追加されました")
+            questionTextField.text = ""
         }
+        
+        
+//        if textFieldString != ""{
+//
+//            questions2.append(["question": judgementsegmentedControl, "answer": textFieldString])
+//            let userDefaults = UserDefaults.standard
+//            userDefaults.set(questions2, forKey: "NewQuestion")
+//            showAlert(message: "問題文が追加されました")
+//            questionTextField.text = ""
+        else{
+            showAlert(message: "問題文が入力されてません")
+        }
+//        if textFieldString != ""{
+//
+//            userDefaults.set(textFieldString,forKey: "addqustion")
+//            userDefaults.set(judgementsegmentedControl,forKey: "addselection")
+//            print(textFieldString)
+//            print(judgementsegmentedControl)
+//            questionTextField.text = ""
+//        }else{
+//            showAlert(message: "問題文が入力されてません")
+        }
+
+
 
     /*
     // MARK: - Navigation
@@ -58,5 +82,20 @@ class AddQuestioViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func showAlert(message: String) {
 
-}
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+//        let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+        let close = UIAlertAction(title: "閉じる", style: .cancel, handler: nil)
+            alert.addAction(close)
+            present(alert, animated: true, completion: nil)
+        }
+    
+   @IBAction func deleteBtn(_ sender: Any) {
+       let userDefaults = UserDefaults.standard
+       userDefaults.removeObject(forKey: "NewQuestion")
+       showAlert(message: "削除しました")
+  }
+    
+
+    }
