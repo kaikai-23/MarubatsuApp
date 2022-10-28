@@ -12,7 +12,7 @@ class AddQuestioViewController: UIViewController {
     var questions : [[String:Any]] = []
     var judgementsegmentedControl = false
     let userDefaults = UserDefaults.standard
-//    var questions:[[String: Any]]
+    //    var questions:[[String: Any]]
     
     
     override func viewDidLoad() {
@@ -34,25 +34,30 @@ class AddQuestioViewController: UIViewController {
             judgementsegmentedControl = true
         default :print("エラー")
         }
-    
-       
+        
+        
     }
     
     @IBOutlet weak var questionTextField: UITextField!
     
-    @IBAction func saveBtn(_ sender: Any) {
-        if let textFieldString =
-            questionTextField.text {
-            questions.append(["question": textFieldString, "answer": judgementsegmentedControl])
-            print(questions)
-            let userDefaults = UserDefaults.standard
-            userDefaults.set(questions, forKey: "NewQuestion")
-            showAlert(message: "問題文が追加されました")
-            questionTextField.text = ""
+    @IBAction func saveBtn(_ sender: Any){
+        if questionTextField.text != ""{
+            if let textFieldString =
+                questionTextField.text {
+                questions.append(["question": textFieldString, "answer": judgementsegmentedControl])
+                print(questions)
+                let userDefaults = UserDefaults.standard
+                userDefaults.set(questions, forKey: "NewQuestion")
+                showAlert(message: "問題文が追加されました")
+                questionTextField.text = ""
+            }else{
+                showAlert(message: "問題文が入力されてません")
+            }
         }else{
             showAlert(message: "問題文が入力されてません")
         }
     }
+        
 
 
 
