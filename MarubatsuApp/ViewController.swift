@@ -21,45 +21,49 @@ class ViewController: UIViewController {
     
    
     // 問題を表示する関数
-      func showQuestion() {
-
-          let question = questions[currentQuestionNum]
-          if let que = question["question"] as? String {
-              questionLabel.text = que
-          }
-      }
-    
+    func showQuestion() {
+        if questions.isEmpty == true{
+            questionLabel.text = "問題がありません。問題を作りましょう"
+        }else{
+            let question = questions[currentQuestionNum]
+            if let que = question["question"] as? String {
+                questionLabel.text = que
+                }
+            }
+        }
     // 回答をチェックする関数
     // 正解なら次の問題を表示します
     func checkAnswer(yourAnswer: Bool) {
-
-
-        let question = questions[currentQuestionNum]
-
-        if let ans = question["answer"] as? Bool {
-
-            if yourAnswer == ans {
-                // 正解
-                showAlert(message: "正解！")
-                
-            
-                // currentQuestionNumを1足して次の問題に進む
-                currentQuestionNum += 1
-            } else {
-                // 不正解
-                showAlert(message: "不正解...")
-                
-            }
-        } else {
-            print("答えが入ってません")
-            return
-        }
-     
         
-        if currentQuestionNum >= questions.count {
-            currentQuestionNum = 0
+        switch questions.isEmpty {
+        case  true: questionLabel.text = "問題がありません。問題を作りましょう"
+        case false:
+            let question = questions[currentQuestionNum]
+            if let ans = question["answer"] as? Bool {
+                
+                if yourAnswer == ans {
+                    // 正解
+                    showAlert(message: "正解！")
+                    
+                    
+                    // currentQuestionNumを1足して次の問題に進む
+                    currentQuestionNum += 1
+                } else {
+                    // 不正解
+                    showAlert(message: "不正解...")
+                    
+                }
+            } else {
+                print("答えが入ってません")
+                return
+            }
+            
+            
+            if currentQuestionNum >= questions.count {
+                currentQuestionNum = 0
+            }
+            showQuestion()
         }
-        showQuestion()
     }
     
     func showAlert(message: String) {
@@ -74,7 +78,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //showQuestion()
-        questionLabel.text = "問題がありません。問題を作りましょう"
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
