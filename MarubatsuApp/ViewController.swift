@@ -8,15 +8,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var newquestion:String?
-    var newselection:Bool?
+
 
     @IBOutlet weak var questionLabel: UILabel!
     let userDefaults = UserDefaults.standard
     // 表示中の問題番号を格納
     var currentQuestionNum:Int = 0
-    
-
     var questions: [[String: Any]] = []
     
    

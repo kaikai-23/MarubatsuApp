@@ -18,6 +18,11 @@ class AddQuestioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let userDefaults = UserDefaults.standard
+        if userDefaults.array(forKey: "NewQuestion") != nil {
+            questions = userDefaults.array(forKey: "NewQuestion") as! [[String:Any]]
+        }
+        
     }
     
     
