@@ -88,7 +88,9 @@ class AddQuestioViewController: UIViewController {
        let userDefaults = UserDefaults.standard
        userDefaults.removeObject(forKey: "NewQuestion")
        showAlert(message: "削除しました")
-  }
+       print(questions)
+       
+   }
     
 
 }

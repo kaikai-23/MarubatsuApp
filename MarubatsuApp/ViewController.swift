@@ -84,6 +84,7 @@ class ViewController: UIViewController {
             questions = userDefaults.array(forKey: "NewQuestion") as! [[String:Any]]
             showQuestion()
         }else{
+            questions = []
             questionLabel.text = "問題がありません。問題を作りましょう"
         }
 
